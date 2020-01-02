@@ -84,7 +84,7 @@ public class Program
     public void menu2()
     {
         out.println("Please enter new password: ");
-        Scanner input = new Scanner(in);
+        //Scanner input = new Scanner(in);
         
         String newPassword = input.next();
         if (userManagement.changePassword(username, password, newPassword) == false) 
