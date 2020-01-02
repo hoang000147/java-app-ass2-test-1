@@ -46,20 +46,6 @@ public class UserManagement
     public boolean changePassword(String username, String oldPassword, String newPassword)
     {
         User user = User.findUserByUsername(users, username);
-        /*if (user == null)
-        {
-            user.errorReport.setError(true);
-            user.errorReport.setErrorMessage("Invalid username.");
-            user.errorReport.printErrorMessage();
-            return false;        
-        }*/
-        /*if (!oldPassword.equals(user.getPassword())) 
-        {
-            user.errorReport.setError(true);
-            user.errorReport.setErrorMessage("Wrong current password.");
-            user.errorReport.printErrorMessage();
-            return false;            
-        }*/
   
         if (!user.setPassword(newPassword))
         {
@@ -72,23 +58,6 @@ public class UserManagement
     {
         return User.findUserByUsername(users, username).getFullName();
     }
-    
-    /*public void initializeUser()
-    {
-        Customer customer1 = new Customer("1000001", "AA", "AAA", "aaaa", "12345678", 
-                UserType.VIP, true, new Address("a", "a", "a", "a", State.NSW, 100), "aaa@xyz.com");
-        Guest guest = new Guest("2000001", "BB", "BBB", "bbbb", "12345678", true, "bbb@xyz.com");
-        Staff staff1 = new Staff("3000001", "CC", "CCC", "cccc", "12345678", true, "ccc@xyz.com", "Administrator");
-        Customer customer2 = new Customer("1000002", "DD", "DDD", "dddd", "12345678", 
-                UserType.VIP, true, new Address("d", "d", "d", "d", State.QLD, 200), "ddd@xyz.com");
-        Staff staff2 = new Staff("3000002", "EE", "EEE", "eeee", "12345678", true, "eee@xyz.com", "Some position");
-        
-        if (!customer1.getId().equals("0")) addUser(customer1);
-        if (!customer2.getId().equals("0")) addUser(customer2);
-        if (!staff1.getId().equals("0")) addUser(staff1);
-        if (!staff2.getId().equals("0")) addUser(staff2);
-        if (!guest.getId().equals("0")) addUser(guest);
-    }*/
     
     public User findUserByUsername(String username)
     {
@@ -111,7 +80,7 @@ public class UserManagement
     {
         try
         {
-            File file = new File("C:\\Users\\Asus\\Documents\\NetBeansProjects\\Assignment2-test1\\customer.csv");
+            File file = new File("./customer.csv");
             if (file.exists())
             {
                 FileReader fileReader = new FileReader(file);
@@ -136,7 +105,7 @@ public class UserManagement
         
         try
         {
-            File file = new File("C:\\Users\\Asus\\Documents\\NetBeansProjects\\Assignment2-test1\\guest.csv");
+            File file = new File("./guest.csv");
             if (file.exists())
             {
                 FileReader fileReader = new FileReader(file);
@@ -161,7 +130,7 @@ public class UserManagement
         
         try
         {
-            File file = new File("C:\\Users\\Asus\\Documents\\NetBeansProjects\\Assignment2-test1\\staff.csv");
+            File file = new File("./staff.csv");
             if (file.exists())
             {
                 FileReader fileReader = new FileReader(file);
