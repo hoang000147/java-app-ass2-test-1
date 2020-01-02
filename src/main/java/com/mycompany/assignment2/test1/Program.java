@@ -23,6 +23,7 @@ public class Program
     private ArrayList<User> users ;
     private ArrayList<Service> services;
     private ArrayList<BookingRecord> bookings;
+	private Scanner input;
     
     
     
@@ -43,18 +44,19 @@ public class Program
         services = servicesManagement.getServiceList();
         bookingManagement.preProcess(users, services);
         bookings = bookingManagement.getBookingList();
+		input = new Scanner(in);
     }
     
     public UserType logIn()
     {
-        Scanner userInput = new Scanner(in);
+        //Scanner userInput = new Scanner(in);
         
         while (true)        
         {            
             out.print("Enter username: ");
-            username = userInput.next();
+            username = input.next();
             out.print("Enter password: ");
-            password = userInput.next();
+            password = input.next();
             
             if (userManagement.logIn(username, password) != null)
                 return userManagement.logIn(username, password);
@@ -105,7 +107,7 @@ public class Program
     
     public void menu4()
     {
-        Scanner input = new Scanner(in);
+        //Scanner input = new Scanner(in);
         out.println("Please choose what attribute to sort by: ");
         out.println("Sort by id: 1");
         //out.println("Sort by first name: 2");
@@ -128,7 +130,7 @@ public class Program
     
     public void menu6()
     {
-        Scanner input = new Scanner(in);
+        //input = new Scanner(in);
         out.print("Please enter the keyword you want to search: ");
         String name = input.next();
         ArrayList<Service> result = Service.findServiceByKeywordSearchOnName(services, name);
@@ -139,7 +141,7 @@ public class Program
     
     public void menu7()
     {
-        Scanner input = new Scanner(in);
+        //Scanner input = new Scanner(in);
         out.println("Please enter the username you want to search: ");
         String username = input.next();
         ArrayList<BookingRecord> result = bookingManagement.findBookingRecordByUsername(username);
@@ -153,7 +155,7 @@ public class Program
     
     public void displayMenuForCustomerAndGuest()
     {
-        Scanner menuInput = new Scanner(in);
+        //Scanner menuInput = new Scanner(in);
         boolean c = true;
         
         while (c)
@@ -164,7 +166,7 @@ public class Program
             out.println("Menu 2: Change password.");
             out.println("Menu 3: List all Customer's email.");
             out.println("Menu 6: Search for service name by keyword.");
-            int select = menuInput.nextInt();
+            int select = input.nextInt();
             
             switch (select)
             {
@@ -193,7 +195,7 @@ public class Program
     
     public void displayMenuForStaff()
     {
-        Scanner menuInput = new Scanner(in);
+        //Scanner menuInput = new Scanner(in);
         boolean c = true;
         
         while (c)
@@ -207,7 +209,7 @@ public class Program
             out.println("Menu 5: Filter VIP customers.");
             out.println("Menu 7: Search for booking record by customer's username.");
             
-            int select = menuInput.nextInt();
+            int select = input.nextInt();
             
             switch (select)
             {
