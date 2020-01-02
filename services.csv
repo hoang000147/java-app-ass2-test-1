@@ -1,0 +1,5 @@
+1000000,Upgrade Device,Upgrade device hardware,internal drive,4.0,150.0,true
+1000001,Clean Device,Clean device internal,cleaning equipment,2.0,75.0,true
+1000002,Repair Device,Repair device and replace faulty parts,parts as required,8.0,250.0,true
+1000003,Virus Removal,Remove virus and malware,n/a,4.0,125.0,true
+1000004,Install OS,Install new version of OS Version,n/a,5.0,65.0,true
